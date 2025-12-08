@@ -14,7 +14,264 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      budget_projects: {
+        Row: {
+          created_at: string
+          custo_operacional: number
+          description: string | null
+          frete_medio: number
+          id: string
+          impostos_default: number
+          mao_obra_interna: number
+          margem_lucro: number
+          name: string
+          producao_mensal: number
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          custo_operacional?: number
+          description?: string | null
+          frete_medio?: number
+          id?: string
+          impostos_default?: number
+          mao_obra_interna?: number
+          margem_lucro?: number
+          name?: string
+          producao_mensal?: number
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          custo_operacional?: number
+          description?: string | null
+          frete_medio?: number
+          id?: string
+          impostos_default?: number
+          mao_obra_interna?: number
+          margem_lucro?: number
+          name?: string
+          producao_mensal?: number
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      machines: {
+        Row: {
+          aplicacao: string | null
+          categoria: string
+          created_at: string
+          custo_por_peca: number
+          descricao: string | null
+          fornecedor: string | null
+          frete: number
+          id: string
+          impostos: number
+          item: string
+          obs: string | null
+          preco_unit: number
+          project_id: string
+          quantidade: number
+          updated_at: string
+        }
+        Insert: {
+          aplicacao?: string | null
+          categoria?: string
+          created_at?: string
+          custo_por_peca?: number
+          descricao?: string | null
+          fornecedor?: string | null
+          frete?: number
+          id?: string
+          impostos?: number
+          item?: string
+          obs?: string | null
+          preco_unit?: number
+          project_id: string
+          quantidade?: number
+          updated_at?: string
+        }
+        Update: {
+          aplicacao?: string | null
+          categoria?: string
+          created_at?: string
+          custo_por_peca?: number
+          descricao?: string | null
+          fornecedor?: string | null
+          frete?: number
+          id?: string
+          impostos?: number
+          item?: string
+          obs?: string | null
+          preco_unit?: number
+          project_id?: string
+          quantidade?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "machines_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "budget_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      materials: {
+        Row: {
+          aplicacao: string | null
+          categoria: string
+          created_at: string
+          custo_por_peca: number
+          descricao: string | null
+          fornecedor: string | null
+          frete: number
+          id: string
+          impostos: number
+          item: string
+          obs: string | null
+          preco_unit: number
+          project_id: string
+          quantidade: number
+          updated_at: string
+        }
+        Insert: {
+          aplicacao?: string | null
+          categoria?: string
+          created_at?: string
+          custo_por_peca?: number
+          descricao?: string | null
+          fornecedor?: string | null
+          frete?: number
+          id?: string
+          impostos?: number
+          item?: string
+          obs?: string | null
+          preco_unit?: number
+          project_id: string
+          quantidade?: number
+          updated_at?: string
+        }
+        Update: {
+          aplicacao?: string | null
+          categoria?: string
+          created_at?: string
+          custo_por_peca?: number
+          descricao?: string | null
+          fornecedor?: string | null
+          frete?: number
+          id?: string
+          impostos?: number
+          item?: string
+          obs?: string | null
+          preco_unit?: number
+          project_id?: string
+          quantidade?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "materials_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "budget_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      production: {
+        Row: {
+          aplicacao: string | null
+          categoria: string
+          created_at: string
+          custo_por_peca: number
+          descricao: string | null
+          fornecedor: string | null
+          frete: number
+          id: string
+          impostos: number
+          item: string
+          obs: string | null
+          preco_unit: number
+          project_id: string
+          quantidade: number
+          updated_at: string
+        }
+        Insert: {
+          aplicacao?: string | null
+          categoria?: string
+          created_at?: string
+          custo_por_peca?: number
+          descricao?: string | null
+          fornecedor?: string | null
+          frete?: number
+          id?: string
+          impostos?: number
+          item?: string
+          obs?: string | null
+          preco_unit?: number
+          project_id: string
+          quantidade?: number
+          updated_at?: string
+        }
+        Update: {
+          aplicacao?: string | null
+          categoria?: string
+          created_at?: string
+          custo_por_peca?: number
+          descricao?: string | null
+          fornecedor?: string | null
+          frete?: number
+          id?: string
+          impostos?: number
+          item?: string
+          obs?: string | null
+          preco_unit?: number
+          project_id?: string
+          quantidade?: number
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "production_project_id_fkey"
+            columns: ["project_id"]
+            isOneToOne: false
+            referencedRelation: "budget_projects"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
