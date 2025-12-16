@@ -22,4 +22,4 @@ export interface Config {
   producaoMensal: number;
 }
 
-export type TabType = 'materiais' | 'maquinas' | 'producao' | 'orcamento' | 'config';
+export type TabType = 'materiais' | 'maquinas' | 'producao' | 'fornecedores' | 'orcamento' | 'config';

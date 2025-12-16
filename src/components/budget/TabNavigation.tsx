@@ -1,5 +1,5 @@
 import { TabType } from '@/types/budget';
-import { Package, Settings2, Factory, Wallet, Cog } from 'lucide-react';
+import { Package, Settings2, Factory, Wallet, Cog, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface TabNavigationProps {
@@ -11,6 +11,7 @@ const tabs: { id: TabType; label: string; icon: React.ReactNode }[] = [
   { id: 'materiais', label: 'Materiais Base', icon: <Package className="w-4 h-4" /> },
   { id: 'maquinas', label: 'Máquinas', icon: <Settings2 className="w-4 h-4" /> },
   { id: 'producao', label: 'Produção', icon: <Factory className="w-4 h-4" /> },
+  { id: 'fornecedores', label: 'Por Fornecedor', icon: <Users className="w-4 h-4" /> },
   { id: 'orcamento', label: 'Orçamento', icon: <Wallet className="w-4 h-4" /> },
   { id: 'config', label: 'Configurações', icon: <Cog className="w-4 h-4" /> },
 ];

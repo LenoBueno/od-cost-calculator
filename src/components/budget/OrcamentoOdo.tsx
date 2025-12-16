@@ -9,6 +9,7 @@ import { TabNavigation } from './TabNavigation';
 import { BudgetTableDb } from './BudgetTableDb';
 import { BudgetOverviewDb } from './BudgetOverviewDb';
 import { ConfigPanelDb } from './ConfigPanelDb';
+import { MaterialsBySupplier } from './MaterialsBySupplier';
 
 const calcularSubtotal = (preco: number, qtd: number) => preco * qtd;
 const calcularImpostos = (subtotal: number, percImpostos: number) => subtotal * (percImpostos / 100);
@@ -133,6 +134,10 @@ export const OrcamentoOdo = () => {
               onRemove={id => removeItem('production', id)}
               onUpdate={(id, campo, valor) => updateItem('production', id, campo, valor)}
             />
+          )}
+
+          {activeTab === 'fornecedores' && (
+            <MaterialsBySupplier materials={materials} />
           )}
 
           {activeTab === 'orcamento' && (
